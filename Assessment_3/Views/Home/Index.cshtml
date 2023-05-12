@@ -1,0 +1,28 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="home">
+    <h1>Your Product Store</h1>
+
+    <div class="home__body">
+        <h4 class="home__bodyTitle">Select a category</h4>
+
+        <main class="home__bodyMain">
+            @foreach (var category in ViewBag.Categories as List<Category>)
+            {
+                <div class="category__card">
+                    <h3>@category.Name</h3>
+
+                    <p>@category.Description</p>
+                    <small>Product count: @category.CategoryQuantity</small>
+
+                    <a asp-controller="Product" asp-action="Index" asp-route-categoryId=@category.CategoryId>Show Products</a>
+                </div>
+            }
+        </main>
+    </div>
+</div>

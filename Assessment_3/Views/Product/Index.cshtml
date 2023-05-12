@@ -1,0 +1,81 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="products">
+    <header class="products__header">
+        <h2>Products</h2>
+
+        <a class="btn bnt-primary" asp-controller="Home" asp-action="Index">Back</a>
+    </header>
+
+
+    <div class="products__data">
+        @(
+            Html.DevExtreme().DataGrid<Product>()
+                        .ID("products__container")
+                        .ShowBorders(true)
+                        .ShowRowLines(true)
+                        .Width("75%")
+                        .Height("80%")
+                        .Scrolling(_ => _.UseNative(true))
+                        .WordWrapEnabled(true)
+                        .DataSource(_ =>
+                        {
+                            return _.Mvc()
+                            .Controller("Product")
+                            .Key("ProductId")
+                            .LoadAction("Get")
+                            .LoadParams(new { categoryId = ViewBag.CategoryId })
+                            .UpdateAction("Put")
+                            .InsertAction("Post")
+                            .DeleteAction("Delete");
+                        })
+                        .Editing(_ =>
+                        {
+                            _.Mode(GridEditMode.Form);
+                            _.UseIcons(true);
+                            _.Texts(_ => _.AddRow("Add Product"));
+                            _.RefreshMode(GridEditRefreshMode.Reshape);
+                            _.AllowDeleting(true);
+                            _.AllowAdding(true);
+                            _.AllowUpdating(true);
+                        })
+                        .Toolbar(_ =>
+                        {
+                            _.Items(items =>
+                            {
+                                items.Add().Name("addRowButton").ShowText(ToolbarItemShowTextMode.Always);
+                            });
+                        })
+
+                        .Columns(_ =>
+                        {
+                            _.AddFor(_ => _.Name)
+                                .ValidationRules(_ => _.AddRequired());
+
+                            _.AddFor(_ => _.Description).Width(300);
+
+                            _.AddFor(_ => _.CategoryId)
+                                .Caption("Category")
+                                .Lookup(_ =>
+                                    _.DataSource(_ =>
+                                        _.Mvc()
+                                        .Controller("Categories")
+                                        .LoadAction("Get")
+                                        .Key("CategoryId")
+                                )
+                                .DisplayExpr("Name")
+                                .ValueExpr("CategoryId")
+                            );
+
+                _.AddFor(_ => _.Price);
+
+                _.AddFor(_ => _.Quantity);
+            })
+        )
+    </div>
+</div>
