@@ -82,3 +82,11 @@ C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\runtim
 C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\FluentValidation.dll
 C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
 C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\Humanizer.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\nduduzos\source\repos\Assessment_3\Assessment_3\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
